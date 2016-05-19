@@ -9,7 +9,6 @@ fi
 
 VOLUME=$1
 
-
 # Get settings from the file
 source cluster/settings
 
