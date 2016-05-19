@@ -1,0 +1,29 @@
+# Google Cloud settings
+# project
+PROJECT=replace_with_your_project
+
+# your cluster region and zones
+REGION=europe-west1
+ZONES=(b c d)
+#
+
+# Cluster servers
+SERVER=gfs-cluster1-server
+
+# internal static IPs
+STATIC_IP=(10.244.231.10 10.244.232.10 10.244.233.10)
+
+# persistent disks
+DISK=gfs-cluster1-brick
+SIZE=350GB
+
+# VM type
+MACHINE_TYPE=n1-standard-2
+
+# image
+IMAGE=$(gcloud compute images list | grep -v grep | grep ubuntu-1604 | awk {'print $1'})
+
+# count
+COUNT=3
+
+SPACE=" "
