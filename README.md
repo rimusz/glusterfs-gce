@@ -1,41 +1,52 @@
 # Bootstrap GlusterFS Cluster in GCE
 
-With a few simple scripts on your Mac OS X or Linux computer, you can deploy [GlusterFS](https://www.gluster.org) cluster to [GCE](https://cloud.google.com/compute/) and use for [GCP](https://cloud.google.com) [GKE](https://cloud.google.com/container-engine/)/[Kubernetes](http://kubernetes.io) clusters as a persistent scalable storage.
+As you know shared file systems are in the cloud. One solution to that problem is a distributed file system. Something each one of your app nodes can read from and write to. When it comes to distributed file systems, [GlusterFS](https://www.gluster.org) is one of the leading products.
+
+With a few simple scripts on your Mac OS X or Linux machine, you can deploy a GlusterFS cluster to [Google Compute Engine](https://cloud.google.com/compute/) (GCE) that provides scalable, persistent shared storage for your GCE or [Google Container Engine](https://cloud.google.com/container-engine/) (GKE) [Kubernetes](http://kubernetes.io) clusters.
 
 By default it is set to three GlusterFS servers.
 
 
+## Prerequisites
 
-### Install dependencies if you do not have them on your OS X/Linux:
+Before continuing, please make sure you have:
 
-* You need Google Cloud account and [GC SDK](https://cloud.google.com/sdk/) installed
-* git
-
+* A [Google Cloud](https://cloud.google.com) account
+* The [Google Cloud SDK](https://cloud.google.com/sdk/) installed
+* Git installed
 
 ### Clone this project and set settings:
 ````
 $ git clone https://github.com/rimusz/glusterfs-gce
 $ cd glusterfs-gce/cluster
 ````
-* Edit `settings` and set `project, region and zones`, the rest of settings you can adjust by your requirements if you need to.
+* Edit the `cluster/settings` file and set `PROJECT, REGION and ZONES`, the rest of settings in this file are probably fine, but can be adjusted if need be.
 
-### Bootstrap cluster
+### Bootstrap the cluster
 ```
 $ ./create_cluster.sh
 ```
-* That will create for you three servers, each of them will have GC persistent disk to be used as a brick.
-* GlusterFS server package will be installed
-* Each server will get the static IP set
+This command will create three servers.
+
+Each server will have:
+
+* A static IP
+* The GlusterFS server package installed
+* A Google Cloud persistent disk to be used as a GlusterFS *brick*, that is: storage space made available to the cluster
 
 ### Create volumes
-With the script below you will be able to create GFS volumes on all three servers automaticly:
+
+A GlusterFS *volume* is a collection of bricks. A volume can store data across the bricks in three basic ways: distributed, striped, or replicated.
+
+With the script below you will be able to create GFS replicated volumes on all three servers automaticly:
 
 ```
 $ cd ..
-$ ./create_volume.sh your_volume_name
+$ ./create_volume.sh VOLUME_NAME
 ```
 
-##### At this point you should have your GlusterFS cluster fully set
+##### At this point, your GlusterFS cluster should be fully set up and operational
+
 You can check Kubernetes GlusterFS [example](https://github.com/kubernetes/kubernetes/tree/release-1.2/examples/glusterfs/) how to use GlusterFS with Kubernetes.
 
 
