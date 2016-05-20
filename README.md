@@ -2,9 +2,9 @@
 
 As you know shared file systems are a tricky problem. One solution to that problem is a distributed file system. Something each one of your app nodes can read from and write to. When it comes to distributed file systems, [GlusterFS](https://www.gluster.org) is one of the leading products.
 
-With a few simple scripts on your Mac OS X or Linux machine, you can deploy a GlusterFS cluster to [Google Compute Engine](https://cloud.google.com/compute/) (GCE) that provides scalable, persistent shared storage for your GCE or [Google Container Engine](https://cloud.google.com/container-engine/) (GKE) [Kubernetes](http://kubernetes.io) clusters.
+With a few simple scripts on your Mac OS X or Linux machine, you can deploy a multi-zone HA GlusterFS cluster to [Google Compute Engine](https://cloud.google.com/compute/) (GCE) that provides scalable, persistent shared storage for your GCE or [Google Container Engine](https://cloud.google.com/container-engine/) (GKE) [Kubernetes](http://kubernetes.io) clusters.
 
-By default it is set to three GlusterFS servers.
+By default it is set to three GlusterFS servers, one server per Google Cloud zone in the same chosen region.
 
 
 ## Prerequisites
