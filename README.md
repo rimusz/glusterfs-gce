@@ -1,4 +1,4 @@
-# Bootstrap GlusterFS Cluster in GCE
+# Bootstrap HA GlusterFS Cluster in GCE
 
 As you know shared file systems are a tricky problem. One solution to that problem is a distributed file system. Something each one of your app nodes can read from and write to. When it comes to distributed file systems, [GlusterFS](https://www.gluster.org) is one of the leading products.
 
