@@ -31,3 +31,7 @@ gcloud compute ssh --zone ${REGION}-${ZONES[0]} ${SERVER}-1 --command "sudo glus
 
 # check volumes
 gcloud compute ssh --zone ${REGION}-${ZONES[0]} ${SERVER}-1 --command "sudo gluster volume info"
+
+# enable bitrot scrubbing (biweekly)
+gcloud compute ssh --zone ${REGION}-${ZONES[0]} ${SERVER}-1 --command "sudo gluster volume bitrot ${VOLUME} enable"
+
