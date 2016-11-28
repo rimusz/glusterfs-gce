@@ -20,6 +20,9 @@ SIZE=350GB
 # VM type
 MACHINE_TYPE=n1-standard-2
 
+# DISK type (local-ssd pd-ssd pd-standard)
+DISK_TYPE=pd-ssd
+
 # image
 IMAGE=$(gcloud compute images list | grep -v grep | grep ubuntu-1604 | awk {'print $1'})
 
