@@ -10,7 +10,7 @@ gcloud config set project ${PROJECT}
 # create persistent disks
 for (( i=1; i<=${COUNT}; i++ ))
 do
-  gcloud compute disks create ${DISK}1-${i} --size ${SIZE} --type DISK_TYPE --zone ${REGION}-${ZONES[$i-1]}
+  gcloud compute disks create ${DISK}1-${i} --size ${SIZE} --type ${DISK_TYPE} --zone ${REGION}-${ZONES[$i-1]}
 done
 
 # create servers
