@@ -8,7 +8,7 @@ source settings
 gcloud config set project ${PROJECT}
 
 
-# create servers
+# Delete Routes ( visible in gCloud Networking Section )
 for (( i=1; i<=${COUNT}; i++ ))
 do
      # Delete the route for VM's static IP
