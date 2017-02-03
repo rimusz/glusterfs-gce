@@ -7,8 +7,8 @@ source settings
 #
 gcloud config set project ${PROJECT}
 
+# Delete servers
 
-# delete servers
 # Delete Routes ( visible in gCloud Networking Section )
 for (( i=1; i<=${COUNT}; i++ ))
 do
@@ -21,7 +21,6 @@ do
     gcloud compute instances delete ${SERVER}-${i} --zone ${REGION}-${ZONES[$i-1]}    
     
 done
-
 
 # delete persistent disks
 for (( i=1; i<=${COUNT}; i++ ))
