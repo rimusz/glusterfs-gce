@@ -1,0 +1,26 @@
+  kind: "Endpoints"
+  apiVersion: "v1"
+  metadata: 
+    name: "gfs-cluster1"
+  subsets: 
+    - 
+      addresses: 
+        - 
+          ip: "10.244.231.10"
+      ports: 
+        - 
+          port: 1
+    - 
+      addresses: 
+        - 
+          ip: "10.244.232.10"
+      ports: 
+        - 
+          port: 1
+    - 
+      addresses: 
+        - 
+          ip: "10.244.233.10"
+      ports: 
+        - 
+          port: 1
