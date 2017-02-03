@@ -56,3 +56,11 @@ In `cluster` folder there are two more scripts:
 
 * `upgrade_glusterfs.sh	` - allows to upgrade GlusterFS server package on all servers
 * `upgrade_servers.sh` - runs `apt-get update && apt-get upgrade` on all servers
+
+
+### Delete the cluster
+```
+$ ./delete_cluster.sh
+```
+This command will deletec all whole cluster.
+
