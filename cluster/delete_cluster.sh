@@ -8,6 +8,7 @@ source settings
 gcloud config set project ${PROJECT}
 
 
+# delete servers
 # Delete Routes ( visible in gCloud Networking Section )
 for (( i=1; i<=${COUNT}; i++ ))
 do
