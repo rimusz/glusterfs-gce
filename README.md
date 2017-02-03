@@ -62,5 +62,5 @@ In `cluster` folder there are two more scripts:
 ```
 $ ./delete_cluster.sh
 ```
-This command will deletec all whole cluster.
+This command will delete the whole cluster.
 
