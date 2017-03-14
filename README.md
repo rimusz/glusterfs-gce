@@ -1,5 +1,7 @@
 # Bootstrap HA GlusterFS Cluster in GCE
 
+* This project bootstraps off-cluster HA GlusterFS Cluster, if you are interested to run HA GlusterFS Cluster in Kubernetes, check out [gluster-kubernetes](https://github.com/gluster/gluster-kubernetes) project.
+
 As you know shared file systems are a tricky problem. One solution to that problem is a distributed file system. Something that your apps can read from and write to. When it comes to distributed file systems, [GlusterFS](https://www.gluster.org) is one of the leading products.
 
 With a few simple scripts on your Mac OS X or Linux machine, you can deploy a multi-zone HA GlusterFS cluster to [Google Compute Engine](https://cloud.google.com/compute/) (GCE) that provides scalable, persistent shared storage for your GCE or [Google Container Engine](https://cloud.google.com/container-engine/) (GKE) [Kubernetes](http://kubernetes.io) clusters.
