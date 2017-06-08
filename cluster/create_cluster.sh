@@ -54,6 +54,11 @@ do
      gcloud compute ssh --zone ${REGION}-${ZONES[$i-1]} ${SERVER}-${i} --command "sudo mkdir -p /data/brick1 && echo '/dev/sdb /data/brick1 xfs defaults 1 2' | sudo tee -a /etc/fstab && sudo mount -a && mount"
      echo " "
 
+     # apt-get update
+     echo "Run apt-get update"
+     gcloud compute ssh --zone ${REGION}-${ZONES[$i-1]} ${SERVER}-${i} --command "yes | sudo apt-get update"
+     echo " "
+     
      # Install GlusterFS server
      echo "Install GlusterFS server"
      gcloud compute ssh --zone ${REGION}-${ZONES[$i-1]} ${SERVER}-${i} --command "yes | sudo apt-get install glusterfs-server"
