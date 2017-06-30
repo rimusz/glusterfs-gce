@@ -49,7 +49,7 @@ $ ./create_volume.sh VOLUME_NAME
 
 ##### At this point, your GlusterFS cluster should be fully set up and operational
 
-You can check Kubernetes GlusterFS [example](https://github.com/kubernetes/kubernetes/tree/release-1.2/examples/glusterfs/) how to use GlusterFS with Kubernetes.
+You can check Kubernetes GlusterFS [example](https://github.com/kubernetes/kubernetes/tree/master/examples/volumes/glusterfs) how to use GlusterFS with Kubernetes.
 
 
 ### Extras
